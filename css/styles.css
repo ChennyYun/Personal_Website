@@ -1,0 +1,366 @@
+:root {
+  --text: #8bd6ff;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+}
+
+code {
+  font-family: "Roboto", "Helvetica Neue", sans-serif monospace;
+}
+
+/* navbar */
+/* .navbar-wrapper{
+    width:100%;
+    padding-top: 5em;
+    position: relative;
+    height: 10vh;
+  } */
+.navbar {
+  width: 100%;
+  height: 12vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #000000;
+  z-index: 1;
+}
+.navbar-element {
+  width: 100%;
+  flex: 0.5;
+  position: relative;
+}
+
+.navbar-element a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: clamp(10px, 1.5em, 40px);
+}
+
+.navbar-element a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--text);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-element a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* social logo list */
+.socials {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.socials li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+.home {
+  height: 88vh;
+  padding-top: 12vh;
+  position: relative;
+}
+
+.section-wrapper {
+  height: 88vh;
+  padding-top: 12vh;
+}
+/* headers */
+
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 10ch;
+  }
+}
+.title {
+}
+.home h1 {
+  position: relative;
+  margin-bottom: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(20px, 7vw, 60px);
+  font-weight: 400;
+  max-width: 0;
+  background: linear-gradient(to right, #366ca0, #202267);
+  -webkit-background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typing 0.71s steps(10, end);
+  animation-fill-mode: forwards;
+}
+
+.home h2 {
+  font-size: clamp(20px, 7vw, 120px);
+  max-width: 0;
+  margin: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+  background: linear-gradient(to right, #2a68a2, #1a1c65);
+  -webkit-background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typing 0.71s steps(10, end);
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+/* arrows */
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.down-arrow {
+  position: absolute;
+  display: block;
+  width: 10%;
+  height: 5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 2%;
+  margin: auto;
+}
+
+.down-arrow img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  animation: bounce 2s infinite ease-in-out;
+}
+/* About Me */
+.about-me {
+  height: 88vh;
+  padding-top: 12vh;
+  display: flex;
+  /* width: 100%; */
+  position: relative;
+}
+/* .about-me .left{
+} */
+.about-me h3 {
+  text-align: left;
+  padding-left: 5em;
+  width: 70%;
+}
+.about-me .right {
+  align-self: center;
+  justify-self: center;
+}
+.about-me .headshot {
+  width: 100%;
+  clip-path: circle(30%);
+  object-fit: cover;
+}
+
+.hidden {
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.animated-div {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1s, opacity 1s;
+  position: static;
+}
+
+.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Projects */
+.projects {
+  height: 88vh;
+  padding-top: 12vh;
+  width: 100%;
+}
+.project-container {
+  margin: 2.5%;
+  width: 90%;
+  height: 80%;
+  display: flex;
+}
+.project-container .list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.project-container .list a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.project-container .list a:not(:first-child) {
+  border-top: 1px solid #ffffff;
+}
+.project-container .list h2 {
+  color: #ffffff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 80%;
+  margin: auto;
+  font-size: 2.5vw;
+  vertical-align: middle;
+}
+
+.project-container .list h2:hover {
+  color: #ffffff;
+}
+.project-container .card-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+.project-container .card {
+  width: 70%;
+  height: 90%;
+  background-color: #0c4f8d;
+  margin: auto;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 7px 20px rgba(255, 255, 255, 0.5);
+  border-radius: 1em;
+  padding: 1.9rem;
+}
+
+.project-container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 0%;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.project-container .card .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  object-fit: fill  ;
+  object-position: center top;
+  left:0;
+  top: 0;
+  flex: 1;
+}
+
+
+.card .overlay {
+  flex: 1;
+  color: #000000;
+}
+
+.card .overlay h1 {
+  padding-top: 7%;
+}
+
+.card .overlay a {
+  position: absolute;
+  right:0;
+  bottom:0;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: white;
+} 
+
+.card .img-text {
+  position: relative;
+  width: 80%;
+  top: 90%;
+  color: #787cec;
+  margin: auto;
+  text-align: center;
+  font-size: 1em;
+  z-index: 2;
+  font-weight: 600;
+}
+.card .hide-left {
+  transform: translateX(-100%);
+}
+
+.card .hide-right {
+  transform: translateX(100%);
+}
+
+.project-container .card .info h1 {
+  margin-top: 0;
+}
+.project-container .card .info h2 {
+  margin-bottom: 0;
+}
+
+/* Experience section */
+
+.experience {
+  height: 88vh;
+  padding-top: 12vh;
+}
+
+.experience h3 {
+  text-align: left;
+  margin-left: 5em;
+  font-weight: 500;
+}
+.experience p {
+  text-align: left;
+}
